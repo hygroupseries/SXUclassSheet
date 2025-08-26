@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+/* 隐藏滚动条但保持滚动功能 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 课程表强制对齐 */
+.course-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.course-cell {
+  height: 68px !important;
+  min-height: 68px;
+  max-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.course-cell-large {
+  height: 136px !important;
+  min-height: 136px;
+  max-height: 136px;
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .course-cell {
+    height: 60px !important;
+    min-height: 60px;
+    max-height: 60px;
+  }
+  
+  .course-cell-large {
+    height: 120px !important;
+    min-height: 120px;
+    max-height: 120px;
+  }
+}
